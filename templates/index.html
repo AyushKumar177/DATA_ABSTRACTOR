@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA_ABSTRACTOR</title>
+     <style>
+
+        body{
+            background-image: url('https://wallpaperaccess.com/full/934067.jpg');
+            background-size: cover;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        h1{
+            color: beige;
+            text-align: left;
+            font-size: 15vh;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        h2{
+            color: beige;
+            text-align: left;
+            font-size: 3vh;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        textarea{
+            border-radius: 10px;
+            margin-left: 60px;
+            background-color: rgb(244, 244, 228);
+            height: 50px;
+            width: 600px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            font-size: larger;
+            opacity: 50%;
+            margin-bottom: 20px;
+        }
+        p{
+            border-radius: 10px;
+            margin-left: 60px;
+            background-color: beige;
+            width: 1000px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            font-size: larger;
+            margin-bottom: 20px;
+        }
+        button{
+            border-radius: 10px;
+            margin-left: 60px;
+            height: 35px;
+            width: 100px;
+            background-color: beige; 
+            border: none;
+            text-align: center;
+            font-size: 14px;
+            transition-duration: 0.6s;
+            cursor: pointer;
+        }
+        
+        .button1:hover {
+            background-color: yellowgreen;
+            color: white;
+        }
+        
+     </style>
+</head>
+<body >
+    <div class="container">
+        <h1>Data Abstractor</h1>
+        <form action="/predict" method="post">
+            <textarea required placeholder="Enter your text here..." id="text" name="text" rows="6" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea> 
+            <br>
+            <button type="submit" class="button button1">Abstract</button>
+        </form>
+        {% if summary %}
+        <div class="result">
+            <h2>Abstracted Text</h2>
+            <p> {{ summary }}</p>
+        </div>
+        {% elif error %}
+        <div class="error">
+            <h2>Error</h2>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
