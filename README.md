@@ -91,8 +91,6 @@ project implementation is done
 
 now we have to only deploy it
 
-10: final ci/cd deployment on AWS
-
 
 -----------------------------------------------
  
